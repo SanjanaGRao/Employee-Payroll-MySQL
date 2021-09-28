@@ -1,27 +1,26 @@
-
+//Program to check if a number is Palindrome or not
 var number = process.argv[2]; 
-console.log(number);
 var original = number;
 
-var answer = function checkPalindrome(n) 
+function reverseDigits(num)
 {
-    let digit;
-    let reverse = 0;
-    while(n != 0)
-    {
-        digit = n % 10;
-        reverse = (reverse * 10) + digit;
-        n /= 10;
+    let rev_num = 0;
+    while (num > 0) {
+        rev_num = rev_num * 10 + num % 10;
+        num = Math.floor(num / 10);
     }
-    console.log(reverse);
-    if(reverse == original)
-        return true;
+    return rev_num;
+}
+ 
+/* Function to check if n is Palindrome*/
+function isPalindrome(n)
+{
+    let rev_n = reverseDigits(n);
+    if (rev_n == n)
+        return 1;
     else
-        return false;
+        return 0;
 }
 
-checkAnswer = answer(number);
-if(checkAnswer == true)
-     console.log(original + " is a Palindrome.");
-else
-     console.log(original + " is not a palindrome.");
+console.log("Is " + original + " a palindrome? ");
+console.log(isPalindrome(number) == 1 ? "Yes, its a Palindrome" : "No, not a plaindrome");
