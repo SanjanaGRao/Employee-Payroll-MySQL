@@ -15,7 +15,7 @@ if(number%10 == 0)
 } 
 else
 {
-    switch(number)
+    switch(Number(number))
     {
         case 1: {console.log("One");
                 break; }
