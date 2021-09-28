@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 rl.question('Enter a weekday number (1-7): ', (number) => 
 {
-    switch(number)
+    switch(Number(number))
     {
         case 1: 
             console.log("Sunday");
